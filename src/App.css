@@ -1,38 +1,182 @@
-.App {
+/* App.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Add animation to book items */
+.book {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  transition: transform 0.2s ease-in-out;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.book:hover {
+  transform: scale(1.05);
+}
+
+.book img {
+  max-width: 100%;
+  height: auto;
+}
+
+.book h2 {
+  margin: 5px 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.book p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #666;
+}
+
+.shopping-cart {
+  margin-top: 20px;
+}
+
+.cart-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 10px;
+}
+
+.cart-item img {
+  max-width: 70px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.cart-item-info {
+  flex-grow: 1;
+}
+
+.cart-item-info p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.cart-item-quantity {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.cart-item-quantity input[type="number"] {
+  width: 40px;
+  margin-right: 5px;
+}
+
+.checkout-button {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.checkout-button button {
+  background-color: #007bff;
   color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.2s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+.checkout-button button:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.footer {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .header,
+  .footer {
+    padding: 15px;
+  }
+
+  .book {
+    padding: 8px;
+  }
+
+  .book h2 {
+    font-size: 18px;
+  }
+
+  .book p,
+  .cart-item-info p {
+    font-size: 14px;
+  }
+
+  .checkout-button button {
+    padding: 8px 15px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 5px;
+  }
+
+  .header,
+  .footer {
+    padding: 10px;
+  }
+
+  .book {
+    padding: 5px;
+  }
+
+  .book h2 {
+    font-size: 16px;
+  }
+
+  .book p,
+  .cart-item-info p {
+    font-size: 12px;
+  }
+
+  .checkout-button button {
+    padding: 6px 12px;
+    font-size: 14px;
   }
 }
